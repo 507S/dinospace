@@ -7,7 +7,7 @@ import Profile from './auth/Profile';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SignUp from './auth/SignUp';
 import Restaurant from './restaurant/Restaurant';
-import RegisterRestaurents from './restaurant/SignupRestaurant';
+import RegisterRestaurents from './auth/SignupRestaurant.js';
 import Reserve from './reservation/Reserve';
 import RestaurantDash from './restaurant/restaurantDash'; 
 import LoginRestaurents from './auth/restaurantLogin';
