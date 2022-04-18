@@ -3,6 +3,12 @@ div.profile{
     top: 20%;
     left: 35%;
 }
+.profile2{
+    position: absolute;
+    top: 20%;
+    left: 40%;
+}
+
 img.card-img-top.profileImg{
     width:200px;
 }

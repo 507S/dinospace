@@ -114,7 +114,7 @@ const RestaurantLogIn = () => {
     
     
     
-                <div className="profile">
+                <div className="profile2">
                     <div data-aos="zoom-in-up" className="fade">
     
                     <div className="justify-content-md-center">

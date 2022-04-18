@@ -74,28 +74,84 @@ const SetOffer = () => {
             console.log(error);
         }
     }
-    return ( 
-    <div>
-    <h1>Set Offer</h1>
-    <form>
-                <label>Offering name 
-                    <input type="text" name="offeringName" onChange={e => { setOfferName(e.target.value) }} />
-                </label>
-                <label>Sit count
-                    <input type="number" name="offeringCount" onChange={e => { setOfferCount(e.target.value) }} />
-                </label>
-                <input type="submit" value="Add offerings" onClick={handleSubmit3} />
-            </form>
+//     return ( 
+//     <div>
+//     <h1>Set Offer</h1>
+//     <form>
+//                 <label>Offering name 
+//                     <input type="text" name="offeringName" onChange={e => { setOfferName(e.target.value) }} />
+//                 </label>
+//                 <label>Sit count
+//                     <input type="number" name="offeringCount" onChange={e => { setOfferCount(e.target.value) }} />
+//                 </label>
+//                 <input type="submit" value="Add offerings" onClick={handleSubmit3} />
+//             </form>
     
-    <div>
-    <h3>Your Offering List</h3>
-    <table>
+//     <div className="table">
+//             <h1 className="text-center">Your Offering List</h1>
+//             <Table striped bordered hover variant="dark">
+//             <thead>
+//         <tr>
+//             <th>Offering Name</th>
+//             <th>Sit Count</th>
+//             <th>Remaining sits</th>
+//             <th> RESET????</th>
+//         </tr>
+//         </thead>
+//         <tbody>
+//         {initialState2.map(post =>
+//             <tr key={post._id}><td> {post.offeringName} </td>
+//                 <td> {post.offeringCount} </td>
+//                 <td> {post.remainingSits} </td>
+//                 <td> <button onClick={() => {
+//                         //setInitialStatus(e.target.value);
+//                         handleSubmit4(post._id, post.offeringCount);
+//                     }}> RESET </button>
+//                 </td>
+//             </tr>
+//         )}
+//         </tbody>
+//     </Table>
+// </div>
+// </div>
+    
+//      );
+
+     return(
+        
+        <div className="justify-content-md-center">
+        <h1>Set Offers</h1>
+        <Form >
+        <Form.Group className="mb-3" >
+                        <Form.Label>Offering Name</Form.Label>
+                        <Form.Control
+                          type="text" name="offeringName" onChange={e => { setOfferName(e.target.value) }}
+                          placeholder="Offering name"
+                        />
+        </Form.Group>
+        <Form.Group className="mb-3" >
+                        <Form.Label>Offering Count</Form.Label>
+                        <Form.Control
+                          type="number" name="offeringCount" onChange={e => { setOfferCount(e.target.value) }} 
+                          placeholder="Offer Count"
+                        />
+                      </Form.Group>
+        </Form>
+        <Button variant="primary" type="submit" value="Add offerings" onClick={handleSubmit3}>
+        Add offerings
+        </Button>
+        <div className="table">
+            <h1 className="text-center">Your Offering List</h1>
+            <Table striped bordered hover variant="dark">
+            <thead>
         <tr>
             <th>Offering Name</th>
             <th>Sit Count</th>
             <th>Remaining sits</th>
             <th> RESET????</th>
         </tr>
+        </thead>
+        <tbody>
         {initialState2.map(post =>
             <tr key={post._id}><td> {post.offeringName} </td>
                 <td> {post.offeringCount} </td>
@@ -107,10 +163,12 @@ const SetOffer = () => {
                 </td>
             </tr>
         )}
-    </table>
+        </tbody>
+    </Table>
 </div>
-</div>
-    
+
+        </div>
+        
      );
     
 }
