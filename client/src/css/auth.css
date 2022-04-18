@@ -1,0 +1,34 @@
+.container{
+    margin:0;
+    padding: 0;
+    max-width: fit-content;
+}
+.col{
+    padding: 0;
+    /* background-color: rgb(41, 39, 39); */
+}
+/* .right{
+    margin-top:20%;
+    margin-left:40%;
+} */
+.user{
+    width: 80px;
+    height:80px;
+    margin-bottom:2rem;
+    /* padding-left: 20px; */
+}
+Form{
+    padding: 100px;
+    padding-top: 50px;
+}
+.form-control{
+    width:100%;
+}
+
+p.emnei{
+    padding: 10px;
+    margin-left: 30%;
+}
+svg{
+    margin-left: 45%;
+}

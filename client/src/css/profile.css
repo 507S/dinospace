@@ -1,0 +1,66 @@
+div.profile{
+    position: fixed;
+    top: 20%;
+    left: 35%;
+}
+img.card-img-top.profileImg{
+    width:200px;
+}
+img.rounded-circle{
+    height: 100px;
+    width: 100px;
+}
+div.profileCard.card{
+    width:400px;
+    height:400px;
+    padding:40px;
+    justify-content: center;
+    background-color: rgb(228, 224, 220);
+}
+.cardImg{
+    margin-left: 35%;
+}
+
+div.mobile.col-md-5{
+    padding: 0px;
+}
+div.name.card-title.h5{
+       margin-left: 30%;     
+}
+p.address.card-text{
+    width:200px;
+}
+.btn-info{
+    margin-left: 21%;
+}
+a.navlogo{
+    position: fixed;
+    top: 2%;
+    left: 2%;
+
+}
+/* div.navbar2{
+    position: fixed;
+    top: 1%;
+} */
+.links2 {
+    display: flex;
+    text-align: center;
+    max-width: auto;
+    position: fixed;
+    top:2%;
+    left: 75%;
+}
+.links2 a{
+    font-size: 20px;
+    text-align: center;
+color: rgb(240, 254, 255);
+  margin-top: 20px;
+  margin-right: 10px;
+  text-decoration: none;
+  padding: 10px;
+  }
+
+  a:hover {
+    color: #35dbf1;
+}

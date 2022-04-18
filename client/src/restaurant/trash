@@ -1,0 +1,10 @@
+<div className="navbar">
+            <img className="dinologo" src={dinoLogo} />
+            <h1>DinoSpace</h1>
+            <div className="links">
+                <a href="#">Overview</a>
+                <a href="#">Interior</a>
+                <a href="#">Menu</a>
+                <a href="#">Reviews</a>
+            </div>
+        </div>
