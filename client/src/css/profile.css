@@ -8,6 +8,11 @@ div.profile{
     top: 20%;
     left: 40%;
 }
+.profile3{
+    position: absolute;
+    top: 20%;
+    left: 30%;
+}
 
 img.card-img-top.profileImg{
     width:200px;
