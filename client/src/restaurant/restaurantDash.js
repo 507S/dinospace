@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Table } from "react-bootstrap";
 import { useEffect, useState } from 'react';
 import jwt from 'jsonwebtoken';
 import '../css/table.css';
@@ -124,10 +125,10 @@ const RestaurantDash = () => {
             <a href="/Signup">sign Up</a>
             <button onClick={handleLogout}> logout </button>
         </div>
-        <div >
-
-            <table>
-
+        <div className="table">
+            <h1 className="text-center">Reservation History</h1>
+            <Table striped bordered hover variant="dark">
+            <thead>
                 <tr>
                     <th>Reservation name</th>
                     <th>Reservation date</th>
@@ -136,8 +137,8 @@ const RestaurantDash = () => {
                     <th>Status Button</th>
                     <th>Current Status</th>
                 </tr>
-
-
+                </thead>
+                <tbody>
                 {initialState.map(post =>
                     <tr key={post._id}><td> {post.reservationName} </td>
                         <td> {
@@ -158,10 +159,12 @@ const RestaurantDash = () => {
                         </td>
                         <td> {post.reserve_status} </td>
                     </tr>
+                    
                 )
                 }
+                </tbody>
 
-            </table>
+            </Table>
 
         </div>
         <div>

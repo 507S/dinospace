@@ -1,8 +1,8 @@
-import bg from "./user.jpg";
-import user from "./user.png";
+import bg from "./images/user.jpg";
+import user from "./images/user.png";
 import "../css/userType.css";
-import restaurantImage from "./restaurant.png";
-import dinoLogo from './dinoLogo.png';
+import restaurantImage from "./images/restaurant.png";
+import dinoLogo from './images/dinoLogo.png';
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';

@@ -1,7 +1,7 @@
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
-import img from "./login5.jpg";
-import dinoLogo from './dinoLogo.png';
-import img2 from "./bg2.jpg";
+import img from "./images/login5.jpg";
+import dinoLogo from './images/dinoLogo.png';
+import img2 from "./images/bg2.jpg";
 import "../css/profile.css";
 import Aos from "aos";
 import "aos/dist/aos.css";

@@ -1,8 +1,8 @@
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import img from "./login4.jpg";
+import img from "./images/login4.jpg";
 // import {}
 import "../css/auth.css";
-import userIcon from "./user.png";
+import userIcon from "./images/user.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
