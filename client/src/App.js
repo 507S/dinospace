@@ -11,6 +11,10 @@ import RegisterRestaurents from './restaurant/SignupRestaurant';
 import Reserve from './reservation/Reserve';
 import RestaurantDash from './restaurant/restaurantDash'; 
 import LoginRestaurents from './auth/restaurantLogin';
+import SetTime from './restaurant/setTime'; 
+import SetOffer from './restaurant/setOffer';
+
+import UploadMenu from './restaurant/uploadMenu';
 function App() {
 
   return (
@@ -48,6 +52,15 @@ function App() {
         </Route>
         <Route path="/restaurantLogin">
           <LoginRestaurents />
+        </Route>
+        <Route path="/setRestaurantTime">
+          <SetTime />
+        </Route>
+        <Route path="/setRestaurantOffer">
+          <SetOffer />
+        </Route>
+        <Route path="/menuUpload">
+          <UploadMenu />
         </Route>
       </Switch>
     </Router>

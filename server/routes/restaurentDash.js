@@ -4,8 +4,29 @@ const routers=express.Router();
 const Postmodel=require('../models/postmodels');
 const ReservationModel=require('../models/reservationModel');
 const OfferModel=require('../models/offermodels');
+const Menumodel = require('../models/menumodels');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const multer = require('multer');
+//creating disck space for uploading pics
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './uploads/');
+    },
+    filename: function (req, file, cb) {    
+        cb(null, file.originalname);
+    }
+});
+//upload params for multer
+const upload = multer({ 
+    storage: storage,
+    limits: {
+        fileSize: 1024 * 1024 * 5
+    }
+
+});
+
+
 //gets a post
 routers.get('/:postId',async(req,res)=>{
     try{
@@ -147,4 +168,23 @@ routers.patch('sits/:postId',async(req,res)=>{
         res.json({message:err});
     }
 } );
+//adding menu items
+routers.post('/menu',async(req,res)=>{
+    //console.log(req.body);
+    const post=new MenuModel({
+        restaurantID:req.body.restaurantID,
+        restaurantName:req.body.restaurantName,
+        menuDir:req.body.menuName
+    });
+    post.save()
+    .then(data => {
+        res.json(data);
+    })
+    .catch(err => {
+        res.json({message: err});
+    });
+    
+
+});
+
 module.exports=routers;
