@@ -113,7 +113,7 @@ const RestaurantDash = () => {
     const handleSubmit4 = async (optionID, prevSitCount) => {
         console.log(prevSitCount);
         try {
-            const response = await axios.patch(`reserve/sitreset/${optionID}`, { prevSitCount: prevSitCount });
+            const response = await axios.patch(`offer/sitreset/${optionID}`, { prevSitCount: prevSitCount });
             console.log(response);
             window.location.reload(true);
         } catch (error) {
