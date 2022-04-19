@@ -51,8 +51,8 @@ function App() {
         <Route path="/dash">
           <RestaurantDash />
         </Route>
-        <Route path="/restaurantLogin">
-          <LoginRestaurents />
+        <Route path="/dash">
+          <RestaurantDash />
         </Route>
         <Route path="/setRestaurantTime">
           <SetTime />
