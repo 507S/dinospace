@@ -9,6 +9,8 @@ import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { useState } from "react";
 import axios from "axios";
+import LoginButton from '../components/login'
+import LogoutButton from '../components/logout'
 
 const SignUp = () => {
     useEffect(() => {
@@ -84,6 +86,9 @@ const SignUp = () => {
                                 <Form.Group className="mb-3">
                                     <Form.Control type="text" placeholder="Enter Mobile Number" name="phone" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
                                 </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Control type="email" placeholder="Enter email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                </Form.Group>
                                 {/* <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Control type="email" placeholder="Enter email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </Form.Group> */}
@@ -120,6 +125,10 @@ const SignUp = () => {
                                 </a>
                                 
                                 
+                                </div>
+                                <div className="App">
+                                    <LoginButton />
+                                    <LogoutButton />
                                 </div>
                             </div>
                         </Form>

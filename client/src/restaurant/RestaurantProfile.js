@@ -6,8 +6,13 @@ import dinoLogo from "../auth/images/dinoLogo.png";
 import bg from "../auth/images/bg9.jpg";
 import "../css/table.css";
 import "../css/profile.css";
+<<<<<<< HEAD
 import Select from 'react-select'
 import { useParams } from "react-router-dom";
+=======
+import Select from "react-select";
+import { Link, useParams } from "react-router-dom";
+>>>>>>> 829a781a07c8352e4a77c11eaab0e43763c04c58
 
 const RestaurantProfile = () => {
   const params = useParams();
@@ -160,6 +165,11 @@ const RestaurantProfile = () => {
           <p id="rname">Cuisine: {initialState.cuisine}</p>
           <p id="rname">Location: {initialState.location}</p>
           <p id="rname">Rating: {initialState.rating}</p>
+<<<<<<< HEAD
+=======
+          <Link to={`/Reservation/${initialState._id}`}><Button id="res">Reserve</Button>
+          </Link>
+>>>>>>> 829a781a07c8352e4a77c11eaab0e43763c04c58
         </div>
 
         <div id="reserve">
