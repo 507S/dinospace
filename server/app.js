@@ -18,7 +18,11 @@ const reserveroutes = require('./routes/restaurentDash');
 app.use('/reserve',reserveroutes);
 
 const reserving = require('./routes/reserveAPI');
-app.use('/offer',reserving);
+app.use('/offer', reserving);
+
+const userRoutes = require('./routes/userRoutes');
+app.use("/api/users", userRoutes); 
+
 
 // app.use('/posts',()=>{
     
