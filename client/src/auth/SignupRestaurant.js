@@ -257,7 +257,7 @@ const RegisterRestaurents = () => {
                       </Form.Group>
                     </Col>
                     <Col>
-                      <Form.Group className="mb-3" controlId="time" >
+                      <Form.Group className="mb-3" >
                         <Form.Label>Closing</Form.Label>
                         <Form.Control
                           type="time"
