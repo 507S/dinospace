@@ -21,7 +21,10 @@ const Home = () => {
             <div data-aos="fade-up" className="fade">
             <img src={dine} />
             <p className='moto'>NEVER WAIT TO EAT AGAIN</p>
-            <Searchbar />
+            <input type="text" placeholder="Search for restaurants" className="searchbar" 
+             onClick={()=>window.location.href='/search'}/>
+      
+            
             </div>
             
             <div data-aos="fade-up" className="fade">

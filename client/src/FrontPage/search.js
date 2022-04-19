@@ -14,6 +14,7 @@ const Searchbar = () => {
 
 
      const fetchUsers = async (query)=>{
+       if(query.length > 0){
        const queryObj = {
            query:query
           };
@@ -25,6 +26,8 @@ const Searchbar = () => {
       }catch(error){
         console.log(error);
       }
+      
+    }
 
      }
     return (

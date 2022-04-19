@@ -15,7 +15,7 @@ import SetTime from './restaurant/setTime';
 import SetOffer from './restaurant/setOffer';
 import RestaurantDashboard from './restaurant/RestaurantDashboard.js';
 import EditRestaurantProfile from './restaurant/editRestaurantprofile';
-
+import Search from './FrontPage/search';
 import UploadMenu from './restaurant/uploadMenu';
 function App() {
 
@@ -69,6 +69,9 @@ function App() {
         </Route>
         <Route path="/editResProfile">
           <EditRestaurantProfile />
+        </Route>
+        <Route path="/search">
+          <Search />
         </Route>
       </Switch>
     </Router>
