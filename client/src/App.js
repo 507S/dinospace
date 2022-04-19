@@ -15,6 +15,7 @@ import SetTime from './restaurant/setTime';
 import SetOffer from './restaurant/setOffer';
 import RestaurantDashboard from './restaurant/RestaurantDashboard.js';
 
+
 import UploadMenu from './restaurant/uploadMenu';
 function App() {
 
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path="/UserSignUp">
           <UserSignUp />
+        </Route>
+        <Route path="/restaurantLogin">
+          <LoginRestaurents />
         </Route>
         <Route path="/LogIn">
           <LogIn />

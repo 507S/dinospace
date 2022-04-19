@@ -167,54 +167,6 @@ const RestaurantDash = () => {
             </Table>
 
         </div>
-        <div>
-            <h3>Set Opening and closing Time</h3>
-            <form>
-                <label>Open Time
-                    <input type="time" name="openTime" onChange={e => { setOpenTime(e.target.value) }} />
-                </label>
-                <label>Close Time
-                    <input type="time" name="closeTime" onChange={e => { setCloseTime(e.target.value) }} />
-                </label>
-                <input type="submit" value="Set Open Close Time" onClick={handleSubmit2} />
-            </form>
-        </div>
-        <div>
-            <h3>Your offerings </h3>
-            <form>
-                <label>Offering name 
-                    <input type="text" name="offeringName" onChange={e => { setOfferName(e.target.value) }} />
-                </label>
-                <label>Sit count
-                    <input type="number" name="offeringCount" onChange={e => { setOfferCount(e.target.value) }} />
-                </label>
-                <input type="submit" value="Add offerings" onClick={handleSubmit3} />
-            </form>
-        </div>
-        <div>
-            <h3>Your Offering List</h3>
-            <table>
-                <tr>
-                    <th>Offering Name</th>
-                    <th>Sit Count</th>
-                    <th>Remaining sits</th>
-                    <th> RESET????</th>
-                </tr>
-                {initialState2.map(post =>
-                    <tr key={post._id}><td> {post.offeringName} </td>
-                        <td> {post.offeringCount} </td>
-                        <td> {post.remainingSits} </td>
-                        <td> <button onClick={() => {
-                                //setInitialStatus(e.target.value);
-                                handleSubmit4(post._id, post.offeringCount);
-                            }}> RESET </button>
-                        </td>
-                    </tr>
-                )}
-            </table>
-        </div>
-
-
     </div>);
 }
 
