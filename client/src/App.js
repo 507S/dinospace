@@ -81,6 +81,7 @@ function App() {
         <Route path="/search">
           <Search />
         </Route>
+        
       </Switch>
     </Router>
   );

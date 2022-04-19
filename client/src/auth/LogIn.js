@@ -9,6 +9,8 @@ import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { useState } from "react";
 import axios from "axios";
+import LoginButton from '../components/login'
+import LogoutButton from '../components/logout'
 
 const LogIn = () => {
     useEffect(() => {
@@ -118,7 +120,10 @@ const LogIn = () => {
                     </div>
                 </div>
             </div>
-
+            <div className="App">
+                <LoginButton />
+                <LogoutButton />
+            </div>
         </div>
 
     );
