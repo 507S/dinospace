@@ -84,7 +84,7 @@ const EditRestaurantProfile = () => {
       try {
         const resID = decoded.id;
         const response = await axios.patch(`/post/update/${resID}`, newRestaurent);
-        console.log(response);
+        console.log(response); 
         // const response= fetch('/post/',{
         //     method:'POST',
         //     mode:'no-cors',
