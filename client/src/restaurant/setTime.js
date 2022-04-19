@@ -59,9 +59,12 @@ const SetTime = () => {
       </a>
 
       <div className="links2">
-        <a href="/SignUp">Sign Up</a>
-        <a href="/LogIn">Sign In</a>
-        <a href="/Profile">Profile</a>
+      <a href="/dash">Reservation History</a>
+        <a href="/setRestaurantOffer">Set Offer</a>
+        <a href="/editResProfile">Edit Profile</a>
+
+        {/* <a href="/Profile">Profile</a> */}
+        {/* <a href="/"onClick={handleLogout}>logout</a> */}
       </div>
 
       <div className="profile3">

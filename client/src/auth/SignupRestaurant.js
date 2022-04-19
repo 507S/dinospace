@@ -176,7 +176,7 @@ const RegisterRestaurents = () => {
                   </Row>
                   <Row>
                     <Col>
-                      <Form.Group className="mb-3" >
+                      <Form.Group className="mb-3">
                         <Form.Label>Location</Form.Label>
                         <Form.Control
                           type="text"
@@ -188,7 +188,7 @@ const RegisterRestaurents = () => {
                       </Form.Group>
                     </Col>
                     <Col>
-                      <Form.Group className="mb-3" >
+                      <Form.Group className="mb-3">
                         <Form.Label>Email</Form.Label>
                         <Form.Control
                           type="email"
@@ -203,7 +203,7 @@ const RegisterRestaurents = () => {
                   </Row>
                   <Row>
                     <Col>
-                      <Form.Group className="mb-3" >
+                      <Form.Group className="mb-3">
                         <Form.Label>Cuisine</Form.Label>
                         <Form.Control
                           type="text"
@@ -225,7 +225,7 @@ const RegisterRestaurents = () => {
                   </Row>
                   <Row>
                     <Col>
-                      <Form.Group className="mb-3" >
+                      <Form.Group className="mb-3">
                         <Form.Label>Street</Form.Label>
                         <Form.Control
                           type="text"
@@ -235,7 +235,7 @@ const RegisterRestaurents = () => {
                       </Form.Group>
                     </Col>
                     <Col>
-                      <Form.Group className="mb-3" >
+                      <Form.Group className="mb-3">
                         <Form.Label>House</Form.Label>
                         <Form.Control
                           type="text"
@@ -257,7 +257,7 @@ const RegisterRestaurents = () => {
                       </Form.Group>
                     </Col>
                     <Col>
-                      <Form.Group className="mb-3" >
+                      <Form.Group className="mb-3">
                         <Form.Label>Closing</Form.Label>
                         <Form.Control
                           type="time"
@@ -280,10 +280,7 @@ const RegisterRestaurents = () => {
                       </Form.Group>
                     </Col>
                     <Col>
-                      <Form.Group
-                        className="mb-3"
-              
-                      >
+                      <Form.Group className="mb-3">
                         <Form.Label>Password </Form.Label>
                         <Form.Control
                           type="password"
@@ -295,7 +292,13 @@ const RegisterRestaurents = () => {
                     </Col>
                   </Row>
                 </Container>
-                <Button id="emnei" variant="primary" type="submit" value="Submit" onClick={handleSubmit}>
+                <Button
+                  id="emnei"
+                  variant="primary"
+                  type="submit"
+                  value="Submit"
+                  onClick={handleSubmit}
+                >
                   Submit
                 </Button>
                 <br />

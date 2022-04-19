@@ -126,3 +126,8 @@ div#reserve{
 button#res.btn.btn-primary{
     margin-left: 65%;
 }
+
+h1#edit{
+    color: rgb(242, 242, 242);
+    padding-bottom: 20px;
+}

@@ -136,9 +136,12 @@ const SetOffer = () => {
       </a>
 
       <div className="links2">
-        <a href="/SignUp">Sign Up</a>
-        <a href="/LogIn">Sign In</a>
-        <a href="/Profile">Profile</a>
+      <a href="/setRestaurantTime">Set Time</a>
+        <a href="/dash">Reservation History</a>
+        <a href="/editResProfile">Edit Profile</a>
+
+        {/* <a href="/Profile">Profile</a> */}
+        {/* <a href="/"onClick={handleLogout}>logout</a> */}
       </div>
 
       <div className="profile3">
@@ -149,7 +152,7 @@ const SetOffer = () => {
             <Form id="offer">
             <h2 className="text-center">Set Offers</h2>
               <Form.Group className="mb-3" controlId="offer">
-                <Form.Label>Offering Name</Form.Label>
+                <Form.Label id="offer">Offering Name</Form.Label>
                 <Form.Control
                   type="text"
                   name="offeringName"
@@ -160,7 +163,7 @@ const SetOffer = () => {
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="offer">
-                <Form.Label>Offering Count</Form.Label>
+                <Form.Label id="offer">Offering Count</Form.Label>
                 <Form.Control
                   type="number"
                   name="offeringCount"
@@ -190,7 +193,7 @@ const SetOffer = () => {
                   <th>Offering Name</th>
                   <th>Sit Count</th>
                   <th>Remaining sits</th>
-                  <th> RESET????</th>
+                  <th> RESET</th>
                 </tr>
               </thead>
               <tbody>
