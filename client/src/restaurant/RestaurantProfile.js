@@ -1,24 +1,12 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-<<<<<<< HEAD
 import { Container, Row, Col, Carousel, Form, Button, Table } from "react-bootstrap";
-=======
-import {
-  Container,
-  Row,
-  Col,
-  Carousel,
-  Form,
-  Button,
-  Table,
-} from "react-bootstrap";
->>>>>>> fc343d0532729486520261eb5e297b3059fc5550
 import dinoLogo from "../auth/images/dinoLogo.png";
 import bg from "../auth/images/bg9.jpg";
 import "../css/table.css";
 import "../css/profile.css";
-import Select from "react-select";
+import Select from 'react-select'
 import { useParams } from "react-router-dom";
 
 const RestaurantProfile = () => {
@@ -161,18 +149,13 @@ const RestaurantProfile = () => {
         <a href="/Profile">Profile</a>
       </div>
 
-      <div className="profile">
+      <div className="profile4">
         {/* <div data-aos="zoom-in-up" className="fade"> */}
-<<<<<<< HEAD
         {/* <div className="justify-content-md-center"> */}
-=======
-        <div className="justify-content-md-center">
->>>>>>> fc343d0532729486520261eb5e297b3059fc5550
         <h1 id="rname">Welcome To {initialState.name}</h1>
         {/* <Container>
             <Row> */}
         <div className="info">
-<<<<<<< HEAD
           <h3>Restaurant Details</h3>
           <p id="rname">Cuisine: {initialState.cuisine}</p>
           <p id="rname">Location: {initialState.location}</p>
@@ -226,51 +209,6 @@ const RestaurantProfile = () => {
                       </option>
                       </Form.Select>
                       </Form.Group> */}
-=======
-          <h3>Restaurant Info</h3>
-          <p id="rname">Cuisine: {initialState.cuisine}</p>
-          <p id="rname">Location: {initialState.location}</p>
-          <p id="rname">Rating: {initialState.rating}</p>
-          <a href="/Reservation/${post._id}"><Button id="res">Reserve</Button>
-          </a>
-        </div>
-
-        {/* <div id="reserve">
-          <Form id="reserve">
-            <h3 id="reserve">Reservation</h3>
-            <Form.Group className="mb-3" controlId="reserve">
-              <Form.Label id="reserve">Reservation Name</Form.Label>
-              <Form.Control
-                type="text"
-                onChange={(e) => setReserveName(e.target.value)}
-                placeholder="Enter Opening Time"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="reserve">
-              <Form.Label id="reserve">Reservation Date</Form.Label>
-              <Form.Control
-                type="date"
-                onChange={(e) => setReserveDate(e.target.value)}
-                placeholder="Enter Opening Time"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="reserve">
-              <Form.Label id="reserve">Total person</Form.Label>
-              <Form.Control
-                type="Number"
-                onChange={(e) => setReservePerson(e.target.value)}
-                placeholder="Enter Opening Time"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="reserve">
-              <Form.Label id="reserve">Choose option</Form.Label>
-              <Select
-                options={options}
-                onChange={(e) => setReserveoption(e.value)}
-                name="subjects"
-              />
-            </Form.Group>
->>>>>>> fc343d0532729486520261eb5e297b3059fc5550
             <Button
               id="reserve"
               variant="primary"
@@ -281,11 +219,7 @@ const RestaurantProfile = () => {
               Submit
             </Button>
           </Form>
-<<<<<<< HEAD
         </div>
-=======
-        </div> */}
->>>>>>> fc343d0532729486520261eb5e297b3059fc5550
         {/* </Row>
           </Container> */}
 
@@ -300,7 +234,7 @@ const RestaurantProfile = () => {
             <img className="restaurant-interior" src={dine4} />
           </Carousel.Item>
         </Carousel> */}
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );
