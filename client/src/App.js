@@ -75,13 +75,8 @@ function App() {
         <Route path="/editResProfile">
           <EditRestaurantProfile />
         </Route>
-<<<<<<< HEAD
         <Route path="/reservation/:id">
           <Reservation />
-=======
-        <Route path="/search">
-          <Search />
->>>>>>> 023d813c8c75d1b6d99eda42d0e4b6b6509968ed
         </Route>
       </Switch>
     </Router>
