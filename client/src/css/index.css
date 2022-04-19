@@ -56,12 +56,15 @@ p.moto{
 Form.d-flex {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
   /* right: 50%; */
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   /* font-size-adjust: ex-height 0.58; */
 }
 
+input.me-2.form-control{
+  width: 180px;
+}
 /* */
 
 .navbar {

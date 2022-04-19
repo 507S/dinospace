@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/index.css';
+import '../css/search.css';
 import {Form, FormControl, Button} from 'react-bootstrap';
 
 
@@ -44,10 +45,10 @@ const Searchbar = () => {
         <ul>
           {
             restaurentDetails.map(restaurent=>(
-              <li key={restaurent._id}>
+              <a id="search" href={`/restaurantProfile/${restaurent._id}`}><li id="search" key={restaurent._id}>
               {restaurent.name}
-              <Link to={`/restaurant/${restaurent._id}`}>View Details</Link>
-              </li>
+              {/* <Link to={`/restaurant/${restaurent._id}`}>View Details</Link> */}
+              </li></a>
             ))
           }
           </ul>

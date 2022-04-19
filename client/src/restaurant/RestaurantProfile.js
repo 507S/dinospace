@@ -15,7 +15,7 @@ import bg from "../auth/images/bg9.jpg";
 import "../css/table.css";
 import "../css/profile.css";
 import Select from "react-select";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const RestaurantProfile = () => {
   const params = useParams();
@@ -158,8 +158,8 @@ const RestaurantProfile = () => {
           <p id="rname">Cuisine: {initialState.cuisine}</p>
           <p id="rname">Location: {initialState.location}</p>
           <p id="rname">Rating: {initialState.rating}</p>
-          <a href="/Reservation/${post._id}"><Button id="res">Reserve</Button>
-          </a>
+          <Link to={`/Reservation/${initialState._id}`}><Button id="res">Reserve</Button>
+          </Link>
         </div>
 
         {/* <div id="reserve">
