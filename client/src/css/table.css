@@ -20,6 +20,10 @@ input#offer.form-control{
   width: 40%;
   margin-left: 30%;
 }
+input#time.form-control{
+  width: 60%;
+  margin-left: 20%;
+}
 
 label.form-label{
   margin-left: 30%;
@@ -34,6 +38,20 @@ form#offer{
   margin-top: 10%;
   position: relative;
 }
+
+form#time{
+  background-color: rgba(0, 0, 0, 0.478);
+  /* margin-left: 30%;
+  margin-right: 30%; */
+  width: 300px;
+  padding: 30px;
+  border-radius: 5px;
+  margin-top: 10%;
+  position: relative;
+  margin-left: 10%;
+}
+
+
 
 button#offer.btn.btn-primary{
   margin-left: 60%;
