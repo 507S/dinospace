@@ -70,3 +70,7 @@ input#Rname.form-control{
 button#emnei.btn.btn-primary {
     margin-left: 45%;
 }
+div.other,a{
+    display: inline-block;
+    padding-left: 25px;
+}
