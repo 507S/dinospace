@@ -209,13 +209,22 @@ routers.patch('/update/:postId',async(req,res)=>{
     //         }); 
     //     }
     // });
+    const password2 = req.body.password;
+    bcrypt.hash(password2,10,(err,hash)=>{
+                    if(err){
+                        res.json({message:err});
+                    }
+                    else{
+                        password2=hash;
+                    }
+                });
     const updatedPost=await Restaurentmodel.updateOne(
         {_id:req.params.postId},
         {$set:{name: req.body.name,
             address: req.body.address,
             cuisine: req.body.cuisine,
             location: req.body.location,
-            password: req.body.password}}
+            password: password2}}
     );
 });
 module.exports=routers;

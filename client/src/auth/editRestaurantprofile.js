@@ -2,8 +2,8 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import dinoLogo from "./images/dinoLogo.png";
 import "../css/profile.css";
 import "../css/auth.css";
-//import userIcon from "./images/dino.jpg";
-
+import userIcon from "./images/dino.jpg";
+import img3 from "./images/bg2.jpg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -13,15 +13,9 @@ import jwt from 'jsonwebtoken';
 
 ///import {Grid, paper} from '@material-ui/core';
 const EditRestaurantProfile = () => {
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            const decoded = jwt.decode(token);
-            console.log(decoded);
-        }
-        Aos.init({ duration: 1500 });
-
-    }, []);
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
 
   const [name, setRestaurantName] = useState("");
   const [mail, setRestaurantMail] = useState("");
@@ -30,47 +24,24 @@ const EditRestaurantProfile = () => {
   const [house, setRestaurantHouse] = useState("");
   const [location, setRestaurantLocation] = useState("");
   const [UserID, setRestaurantUserID] = useState("");
-  const [currentpassword, setpassword] = useState("");
-  const [newpassword, setcpassword] = useState("");
+  const [password, setpassword] = useState("");
+  const [cpassword, setcpassword] = useState("");
   const [cuisine, setCuisine] = useState([""]);
   const [openingTime, setOpenTime] = useState("");
   const [closingTime, setClosingTime] = useState("");
   const [menu, setMenu] = useState([]);
 
   const rating = 1;
-  const correct = false;
+
   const handleSubmit = async (event) => {
-    const token = localStorage.getItem('token');
-    const decoded = jwt.decode(token);
-    const resID = decoded.id;
     event.preventDefault();
-    const user ={
-        email:decoded.email,
-        password:currentpassword
-    }
-    try {
-        //CREATE BACKEND
-      const response = await axios.post('/post/login', user);
-      console.log(response);
-      if(response.data.status=="ok" && response.data.role=="restaurant"){
-        correct=true;
-      }
-      else if(response.data.status=="ok" && response.data.role!="restaurant"){
-        alert("wrong password");
-      }
-      else{
-        alert("wrong pass");
-      }
-    } catch (error) {
-        console.log(error);
-    }
     console.log("lol" + name);
     const address = {
       city: city,
       street: street,
       houseNumber: house,
     };
-    if (true) {
+    if (password == cpassword) {
       const newRestaurent = {
         name,
         address,
@@ -78,13 +49,18 @@ const EditRestaurantProfile = () => {
         rating,
         location,
         UserID,
-        newpassword
+        mail,
+        password,
+        openingTime,
+        closingTime,
       };
       console.log(newRestaurent);
       try {
-        const resID = decoded.id;
-        const response = await axios.patch(`/post/update/${resID}`, newRestaurent);
+        const response = await axios.post("/post/", newRestaurent);
         console.log(response);
+        if (response.data.message == "email already exists") {
+          alert("email already exists");
+        }
         // const response= fetch('/post/',{
         //     method:'POST',
         //     mode:'no-cors',
@@ -99,11 +75,11 @@ const EditRestaurantProfile = () => {
       } catch (error) {
         console.log(error);
       }
-    } 
-    
-}
+    } else {
+      alert("password not match");
+    }
     //console.log(newRestaurent);
-  
+  };
 
   // return(
 
@@ -162,8 +138,9 @@ const EditRestaurantProfile = () => {
   // );
 
   return (
-    <div>
+    <div className="background">
       {/* <Navbar2 /> */}
+      <img className="bg" src={img3} />
       <a href="/" className="navlogo">
         <div data-aos="fade-right" className="fade">
           <img className="dinologo" src={dinoLogo} />
@@ -182,13 +159,13 @@ const EditRestaurantProfile = () => {
             <Form>
               <div data-aos="fade-up" className="fade">
                 <div className="text-center">
-                  
+                  <img className="user" src={userIcon} />
                 </div>
                 <Container>
                   <Row>
                     <Col>
                       <Form.Group className="mb-3" controlId="Rname">
-                        <Form.Label>Change Restaurant Name</Form.Label>
+                        <Form.Label>Restaurant Name</Form.Label>
                         <Form.Control
                           type="text"
                           onChange={(e) => setRestaurantName(e.target.value)}
@@ -201,7 +178,7 @@ const EditRestaurantProfile = () => {
                   <Row>
                     <Col>
                       <Form.Group className="mb-3" >
-                        <Form.Label>Change Location</Form.Label>
+                        <Form.Label>Location</Form.Label>
                         <Form.Control
                           type="text"
                           onChange={(e) =>
@@ -211,11 +188,24 @@ const EditRestaurantProfile = () => {
                         />
                       </Form.Group>
                     </Col>
+                    <Col>
+                      <Form.Group className="mb-3" >
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control
+                          type="email"
+                          onChange={(e) => {
+                            setRestaurantMail(e.target.value);
+                          }}
+                          placeholder="Enter email"
+                          id="email"
+                        />
+                      </Form.Group>
+                    </Col>
                   </Row>
                   <Row>
                     <Col>
                       <Form.Group className="mb-3" >
-                        <Form.Label>Cuisine (comma seperated)</Form.Label>
+                        <Form.Label>Cuisine</Form.Label>
                         <Form.Control
                           type="text"
                           onChange={(e) => setCuisine(e.target.value)}
@@ -259,7 +249,29 @@ const EditRestaurantProfile = () => {
                   <Row>
                     <Col>
                       <Form.Group className="mb-3">
-                        <Form.Label>Current Password</Form.Label>
+                        <Form.Label>Opening</Form.Label>
+                        <Form.Control
+                          type="time"
+                          onChange={(e) => setOpenTime(e.target.value)}
+                          placeholder="Enter Opening Time"
+                        />
+                      </Form.Group>
+                    </Col>
+                    <Col>
+                      <Form.Group className="mb-3" controlId="time" >
+                        <Form.Label>Closing</Form.Label>
+                        <Form.Control
+                          type="time"
+                          onChange={(e) => setClosingTime(e.target.value)}
+                          placeholder="Enter Closing Time"
+                        />
+                      </Form.Group>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Form.Group className="mb-3">
+                        <Form.Label>Password</Form.Label>
                         <Form.Control
                           type="password"
                           id="pass1"
@@ -273,7 +285,7 @@ const EditRestaurantProfile = () => {
                         className="mb-3"
               
                       >
-                        <Form.Label>New Password </Form.Label>
+                        <Form.Label>Password </Form.Label>
                         <Form.Control
                           type="password"
                           id="pass2"
@@ -295,7 +307,5 @@ const EditRestaurantProfile = () => {
       </div>
     </div>
   );
-
 };
-
 export default EditRestaurantProfile;
