@@ -78,6 +78,9 @@ function App() {
         <Route path="/reservation/:id">
           <Reservation />
         </Route>
+        <Route path="/search">
+          <Search />
+        </Route>
       </Switch>
     </Router>
   );
