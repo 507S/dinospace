@@ -4,7 +4,7 @@ import LogIn from './auth/LogIn';
 import UserSignIn from './auth/UserSignIn';
 import UserSignUp from './auth/UserSignUp';
 import Profile from './auth/Profile';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SignUp from './auth/SignUp';
 import Restaurant from './restaurant/Restaurant';
 import RegisterRestaurents from './auth/SignupRestaurant.js';
@@ -13,6 +13,7 @@ import RestaurantDash from './restaurant/restaurantDash';
 import LoginRestaurents from './auth/restaurantLogin';
 import SetTime from './restaurant/setTime'; 
 import SetOffer from './restaurant/setOffer';
+import RestaurantDashboard from './restaurant/RestaurantDashboard.js';
 
 import UploadMenu from './restaurant/uploadMenu';
 function App() {
@@ -50,8 +51,8 @@ function App() {
         <Route path="/dash">
           <RestaurantDash />
         </Route>
-        <Route path="/dash">
-          <RestaurantDash />
+        <Route path="/restaurantPanel">
+          <RestaurantDashboard />
         </Route>
         <Route path="/setRestaurantTime">
           <SetTime />
