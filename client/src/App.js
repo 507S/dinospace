@@ -13,6 +13,7 @@ import RestaurantDash from './restaurant/restaurantDash';
 import LoginRestaurents from './auth/restaurantLogin';
 import SetTime from './restaurant/setTime'; 
 import SetOffer from './restaurant/setOffer';
+import RestaurantProfile from './restaurant/RestaurantProfile'; 
 import RestaurantDashboard from './restaurant/RestaurantDashboard.js';
 import EditRestaurantProfile from './restaurant/editRestaurantprofile';
 import Search from './FrontPage/search';
@@ -54,6 +55,9 @@ function App() {
         </Route>
         <Route path="/dash">
           <RestaurantDash />
+        </Route>
+        <Route path="/restaurantProfile/:id">
+          <RestaurantProfile />
         </Route>
         <Route path="/restaurantPanel">
           <RestaurantDashboard />

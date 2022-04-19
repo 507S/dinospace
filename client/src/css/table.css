@@ -21,12 +21,32 @@ input#offer.form-control{
   margin-left: 30%;
 }
 input#time.form-control{
-  width: 60%;
+  width: 100%;
+  margin-left: 20%;
+}
+
+input#reserve.form-control{
+  width: 70%;
+  margin-left: 20%;
+}
+
+.css-1s2u09g-control{
+  width: 70%;
+  margin-left: 20%;
+}
+
+.css-1pahdxg-control{
+  width: 70%;
   margin-left: 20%;
 }
 
 label.form-label{
-  margin-left: 30%;
+  /* margin-left: 30%; */
+}
+
+label#reserve.form-label{
+  margin: 0px;
+  margin-left: 20%;
 }
 
 form#offer{
@@ -51,15 +71,47 @@ form#time{
   margin-left: 10%;
 }
 
+form#reserve{
+  background-color: rgba(0, 0, 0, 0.581);
+  /* margin-left: 30%;
+  margin-right: 30%; */
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  /* margin-top: 10%; */
+  position: relative;
+  /* margin-left: 100%; */
+  margin-right: 0%;
+  margin-top: 10%;
+}
+
 
 
 button#offer.btn.btn-primary{
   margin-left: 60%;
 }
 
+button#reserve.btn.btn-primary{
+  margin-left: 35%;
+}
+
 img.bg2{
   position: fixed;
 }
+
+h3{
+  color: rgb(233, 226, 226);
+  padding-bottom: 10px;
+}
+h3#reserve{
+  color: rgb(233, 226, 226);
+  padding-bottom: 10px;
+  margin-left: 20%;
+}
+/* div#reserve.col{
+  width: 100%;
+} */
+
 /* a.navlogo{
   position: fixed;
   top: 2%;

@@ -45,7 +45,7 @@ const Restaurant = () => {
                                             Rating: {post.rating}
                                             Location: {post.address.city}
                                             {console.log(post.address.city)} 
-                                            <Link to={`/restaurant/${post._id}`}>View Details</Link>
+                                            <Link to={`/restaurantProfile/${post._id}`}>View Details</Link>
                                         </Card.Text>
                                         {/* <Button onClick={()=> {this.props.history.replace('../restaurant/navbar.js')}} variant="primary">View Details</Button> */}
                                         

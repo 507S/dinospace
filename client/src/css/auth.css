@@ -55,8 +55,9 @@ img.bg{
     position: relative;
 }
 
-.form-label{
+label.form-label{
     color: white;
+    /* margin-left: 0%; */
 }
 
 input#Rname.form-control{

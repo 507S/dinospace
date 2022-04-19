@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Form, Button, Table } from "react-bootstrap";
+import { Container,Row,Col,Select, Form, Button, Table } from "react-bootstrap";
 import dinoLogo from "../auth/images/dinoLogo.png";
 import bg from "../auth/images/bg4.jpg";
 import "../css/table.css";
