@@ -10,7 +10,7 @@ const UploadMenu = () => {
     return ( <div>
         <h1>Upload Menu</h1>
         <form>
-            <input type= "file" name="image" id="image" />    
+            <input type= "file" name="image" id="image" multiple />    
         </form>
     </div> );
 }
