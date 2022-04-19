@@ -47,7 +47,12 @@ const Restaurant = () => {
             
         </div>
         <Link to={`/reservation/${initialState._id}`}>Reservation</Link>
-hello {JSON.stringify(initialState)}
+hello 
+      <h1>{initialState.name}</h1>
+      <h2>{initialState.cuisine}</h2>
+        <h3>{initialState.location}</h3>
+        <h4>{initialState.rating}</h4>
+        
 
 
     </div>);

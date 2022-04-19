@@ -176,4 +176,46 @@ routers.patch('/:postId',async(req,res)=>{
         res.json({message:err});
     }
 } );
+routers.patch('/update/:postId',async(req,res)=>{
+    console.log(req.body);
+    const post=new Restaurentmodel({
+        name: req.body.name,
+        address: req.body.address,
+        cuisine: req.body.cuisine,
+        location: req.body.location,
+        password: req.body.password
+    });
+    // Restaurentmodel.findOne({email:req.body.mail})
+    // .then(data=>{
+    //     if(data){
+    //         res.json({message:"email already exists"});
+
+    //     }
+    //     else{
+    //         bcrypt.hash(req.body.password,10,(err,hash)=>{
+    //             if(err){
+    //                 res.json({message:err});
+    //             }
+    //             else{
+    //                 post.password=hash;
+    //             }
+    //             post.save()
+    //             .then(data => {
+    //                 res.json(data);
+    //             })
+    //             .catch(err => {
+    //                 res.json({message: err});
+    //             });
+    //         }); 
+    //     }
+    // });
+    const updatedPost=await Restaurentmodel.updateOne(
+        {_id:req.params.postId},
+        {$set:{name: req.body.name,
+            address: req.body.address,
+            cuisine: req.body.cuisine,
+            location: req.body.location,
+            password: req.body.password}}
+    );
+});
 module.exports=routers;
