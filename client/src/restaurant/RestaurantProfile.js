@@ -1,25 +1,22 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Carousel,
-  Form,
-  Button,
-  Table,
-} from "react-bootstrap";
+import { Container, Row, Col, Carousel, Form, Button, Table } from "react-bootstrap";
 import dinoLogo from "../auth/images/dinoLogo.png";
 import bg from "../auth/images/bg9.jpg";
 import "../css/table.css";
 import "../css/profile.css";
-import Select from "react-select";
+<<<<<<< HEAD
+import Select from 'react-select'
 import { useParams } from "react-router-dom";
+=======
+import Select from "react-select";
+import { Link, useParams } from "react-router-dom";
+>>>>>>> 829a781a07c8352e4a77c11eaab0e43763c04c58
 
 const RestaurantProfile = () => {
   const params = useParams();
-  console.log(params);
+  // console.log(params);
   const id = params.id;
   const [initialState, setInitialState] = useState([]);
 
@@ -29,12 +26,19 @@ const RestaurantProfile = () => {
         return res.json();
       })
       .then((jsonResponse) => setInitialState(jsonResponse));
-  }, []);
+  },[]);
   console.log(initialState);
-
+  const getdetails = async() => {
+    try {
+      const response = await axios.get(`/post/${id}`);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   //reservation
   const params2 = useParams();
-  /// console.log(params);
+   console.log(params2);
   const restaurantID = params2.id;
   const [reservationName, setReserveName] = useState("");
   const [date, setReserveDate] = useState("");
@@ -69,7 +73,9 @@ const RestaurantProfile = () => {
         .then((res) => {
           return res.json();
         })
-        .then((jsonResponse) => setInitialState3(jsonResponse));
+        .then((jsonResponse) => {setInitialState3(jsonResponse);
+        console.log("intial 3" + jsonResponse);}); 
+        
       //test run for time validation of reservation
       // if(timeComparison()){
       //     console.log("ok");
@@ -82,9 +88,10 @@ const RestaurantProfile = () => {
           return res.json();
         })
         .then((jsonResponse) => {
+          console.log("checking offer is there?" + jsonResponse)
           setInitialState2(jsonResponse);
         });
-      console.log("INITIALSTATE:" + initialState2);
+      console.log("options:" + initialState2);
       let remainingSits = 0;
       let seatfound = false;
       initialState2.forEach((element) => {
@@ -147,34 +154,37 @@ const RestaurantProfile = () => {
         <a href="/Profile">Profile</a>
       </div>
 
-      <div className="profile">
+      <div className="profile4">
         {/* <div data-aos="zoom-in-up" className="fade"> */}
-        <div className="justify-content-md-center">
+        {/* <div className="justify-content-md-center"> */}
         <h1 id="rname">Welcome To {initialState.name}</h1>
         {/* <Container>
             <Row> */}
         <div className="info">
-          <h3>Restaurant Info</h3>
+          <h3>Restaurant Details</h3>
           <p id="rname">Cuisine: {initialState.cuisine}</p>
           <p id="rname">Location: {initialState.location}</p>
           <p id="rname">Rating: {initialState.rating}</p>
-          <a href="/Reservation/${post._id}"><Button id="res">Reserve</Button>
-          </a>
+<<<<<<< HEAD
+=======
+          <Link to={`/Reservation/${initialState._id}`}><Button id="res">Reserve</Button>
+          </Link>
+>>>>>>> 829a781a07c8352e4a77c11eaab0e43763c04c58
         </div>
 
-        {/* <div id="reserve">
-          <Form id="reserve">
+        <div id="reserve">
+          <Form id="reserve" >
             <h3 id="reserve">Reservation</h3>
             <Form.Group className="mb-3" controlId="reserve">
               <Form.Label id="reserve">Reservation Name</Form.Label>
               <Form.Control
                 type="text"
                 onChange={(e) => setReserveName(e.target.value)}
-                placeholder="Enter Opening Time"
+                placeholder="Reserve Name"
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="reserve">
-              <Form.Label id="reserve">Reservation Date</Form.Label>
+              <Form.Label id="reserve" >Reservation Date</Form.Label>
               <Form.Control
                 type="date"
                 onChange={(e) => setReserveDate(e.target.value)}
@@ -188,7 +198,7 @@ const RestaurantProfile = () => {
                 onChange={(e) => setReservePerson(e.target.value)}
                 placeholder="Enter Opening Time"
               />
-            </Form.Group>
+            </Form.Group >
             <Form.Group className="mb-3" controlId="reserve">
               <Form.Label id="reserve">Choose option</Form.Label>
               <Select
@@ -196,7 +206,19 @@ const RestaurantProfile = () => {
                 onChange={(e) => setReserveoption(e.value)}
                 name="subjects"
               />
+
             </Form.Group>
+            {/* <Form.Group className="mb-3" controlId="reserve">
+             
+                    <Form.Label> Which offerings you want to attend </Form.Label>  
+                    <Form.Select>
+                    <option options={options}
+                      onChange={(e) => setReserveoption(e.value)}
+                      name="subjects" >
+
+                      </option>
+                      </Form.Select>
+                      </Form.Group> */}
             <Button
               id="reserve"
               variant="primary"
@@ -207,7 +229,7 @@ const RestaurantProfile = () => {
               Submit
             </Button>
           </Form>
-        </div> */}
+        </div>
         {/* </Row>
           </Container> */}
 
@@ -222,7 +244,7 @@ const RestaurantProfile = () => {
             <img className="restaurant-interior" src={dine4} />
           </Carousel.Item>
         </Carousel> */}
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );

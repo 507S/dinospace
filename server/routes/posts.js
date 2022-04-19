@@ -3,6 +3,7 @@ const express = require('express');
 const routers=express.Router();
 const Postmodel=require('../models/postmodels');
 const Restaurentmodel=require('../models/restaurentmodels');
+const OfferModels=require('../models/offermodels');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 //gets a post
@@ -176,6 +177,7 @@ routers.patch('/:postId',async(req,res)=>{
         res.json({message:err});
     }
 } );
+//updating restaurant profile
 routers.patch('/update/:postId',async(req,res)=>{
     console.log(req.body);
     const post=new Restaurentmodel({
@@ -226,5 +228,6 @@ routers.patch('/update/:postId',async(req,res)=>{
             location: req.body.location,
             password: password2}}
     );
+    res.json(updatedPost);
 });
 module.exports=routers;
