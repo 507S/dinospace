@@ -10,6 +10,7 @@ import Restaurant from './restaurant/Restaurant';
 import RegisterRestaurents from './auth/SignupRestaurant.js';
 import Reserve from './reservation/Reserve';
 import RestaurantDash from './restaurant/restaurantDash'; 
+import Reservation from './restaurant/Reservation'; 
 import LoginRestaurents from './auth/restaurantLogin';
 import SetTime from './restaurant/setTime'; 
 import SetOffer from './restaurant/setOffer';
@@ -50,9 +51,9 @@ function App() {
         <Route path="/SignUpAsRestaurant">
           <RegisterRestaurents />
         </Route>
-        <Route path="/reservation/:id">
+        {/* <Route path="/reservation/:id">
           <Reserve />
-        </Route>
+        </Route> */}
         <Route path="/dash">
           <RestaurantDash />
         </Route>
@@ -74,8 +75,13 @@ function App() {
         <Route path="/editResProfile">
           <EditRestaurantProfile />
         </Route>
+<<<<<<< HEAD
+        <Route path="/reservation/:id">
+          <Reservation />
+=======
         <Route path="/search">
           <Search />
+>>>>>>> 023d813c8c75d1b6d99eda42d0e4b6b6509968ed
         </Route>
       </Switch>
     </Router>
