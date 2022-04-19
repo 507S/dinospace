@@ -59,7 +59,6 @@ const authUser = asyncHandler(async (req, res) => {
 
   const reserveUser = asyncHandler(async (req, res) => {
     res.status(200).json({msg: 'you are authorized'})
-    console.log('I am here');
   })
   
   const logoutUser = asyncHandler(async(req, res) => {

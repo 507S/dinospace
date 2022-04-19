@@ -24,26 +24,34 @@ const LogIn = () => {
 
 
     const submitHandler = async (e) => {
+
         e.preventDefault();
         try {
             const config = {
                 headers: {
+                    'x-access-token': localStorage.getItem('token'),
                     "Content-type": "application/json"
-                }
+                },
+                withCredentials: true,
             }
 
             setLoading(true)
 
-            const { data } = await axios.post('/api/users/login', {
+            const { data } = await axios.post('api/users/login', {
                 email,
                 password
             }, config);
 
             console.log(data);
-            localStorage.setItem('userInfo',JSON.stringify(data));
+            localStorage.setItem('token', data.token);
             setLoading(false);
+            alert('Login Successful');
+            window.location.href = '/';
+
         } catch (error) {
+            setLoading(false)
             setError(error.response.data.message);
+            alert("Invalid Email Or Passowrd");
         }
     };
     

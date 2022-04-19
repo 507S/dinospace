@@ -8,10 +8,14 @@ function Login()
 
     const onSuccess = (res) => {
         console.log("Login Successful! Current User: ", res.profileObj);
+        alert('Login Successful');
+        window.location.href = '/';
     }
 
     const onFailure = (res) => {
         console.log("Login Failed! res:", res);
+        alert('Login Failed');
+        window.location.href = '/';
     }
 
     return(

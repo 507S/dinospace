@@ -23,33 +23,38 @@ const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState(null);
+
 
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        try {
-            const config = {
-                headers: {
-                    "Content-type": "application/json"
+        if (password !== confirmPassword) 
+            setMessage("Passwords do not match");
+        else{
+            try {
+                const config = {
+                    headers: {
+                        "Content-type": "application/json",
+                    },
                 }
+    
+                setLoading(true)
+    
+                const { data } = await axios.post('/api/users/registration', {
+                    name,
+                    email,
+                    password,
+                }, config);
+    
+                console.log(data);
+                localStorage.setItem('userInfo',JSON.stringify(data));
+                setLoading(false);
+            } catch (error) {
+                setError(error.response.data.message);
             }
-
-            setLoading(true)
-
-            const { data } = await axios.post('/api/users/registration', {
-                name,
-                phone,
-                email,
-                password,
-                confirmPassword
-            }, config);
-
-            console.log(data);
-            localStorage.setItem('userInfo',JSON.stringify(data));
-            setLoading(false);
-        } catch (error) {
-            setError(error.response.data.message);
         }
+        
     };
 
     return (
