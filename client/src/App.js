@@ -17,7 +17,7 @@ import SetOffer from './restaurant/setOffer';
 import RestaurantProfile from './restaurant/RestaurantProfile'; 
 import RestaurantDashboard from './restaurant/RestaurantDashboard.js';
 import EditRestaurantProfile from './restaurant/editRestaurantprofile';
-
+import Search from './FrontPage/search';
 import UploadMenu from './restaurant/uploadMenu';
 function App() {
 
@@ -75,8 +75,13 @@ function App() {
         <Route path="/editResProfile">
           <EditRestaurantProfile />
         </Route>
+<<<<<<< HEAD
         <Route path="/reservation/:id">
           <Reservation />
+=======
+        <Route path="/search">
+          <Search />
+>>>>>>> 023d813c8c75d1b6d99eda42d0e4b6b6509968ed
         </Route>
       </Switch>
     </Router>
