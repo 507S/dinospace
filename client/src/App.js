@@ -30,6 +30,9 @@ function App() {
         <Route path="/UserSignUp">
           <UserSignUp />
         </Route>
+        <Route path="/restaurantLogin">
+          <LoginRestaurents />
+        </Route>
         <Route path="/LogIn">
           <LogIn />
         </Route>
