@@ -15,7 +15,7 @@ import SetTime from './restaurant/setTime';
 import SetOffer from './restaurant/setOffer';
 import RestaurantProfile from './restaurant/RestaurantProfile'; 
 import RestaurantDashboard from './restaurant/RestaurantDashboard.js';
-
+import EditRestaurantProfile from './restaurant/editRestaurantprofile';
 
 import UploadMenu from './restaurant/uploadMenu';
 function App() {
@@ -70,6 +70,9 @@ function App() {
         </Route>
         <Route path="/menuUpload">
           <UploadMenu />
+        </Route>
+        <Route path="/editResProfile">
+          <EditRestaurantProfile />
         </Route>
       </Switch>
     </Router>
