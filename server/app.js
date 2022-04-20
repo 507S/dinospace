@@ -9,7 +9,7 @@ const fileUpload = require('express-fileupload');
 app.use(cors());
 app.use(express.json());
 app.use(fileUpload());
-
+const {protect} = require("./Middleware/AuthMiddleware");
 //import routes 
 const postroutes = require('./routes/posts');
 app.use('/post',postroutes);
@@ -21,7 +21,7 @@ const reserving = require('./routes/reserveAPI');
 app.use('/offer', reserving);
 
 const userRoutes = require('./routes/userRoutes');
-app.use("/api/users", userRoutes); 
+app.use("/api/users", userRoutes);
 
 
 // app.use('/posts',()=>{
