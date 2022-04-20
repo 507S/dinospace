@@ -27,8 +27,11 @@ const ReservationHistory = () => {
                 <a href="/LogIn">Sign In</a>
                 <a href="/Profile">Profile</a>
             </div>
+            <div className="profile">
+        {/* <div data-aos="zoom-in-up" className="fade"> */}
+        <div className="justify-content-md-center">
             <div className="table">
-            <h1 className="text-center">Reservation History</h1>
+            <h2 className="text-center">Reservation History</h2>
             <Table striped bordered hover variant="dark">
                 <thead>
                     <tr>
@@ -57,6 +60,8 @@ const ReservationHistory = () => {
                     </tr>
                 </tbody>
             </Table>
+            </div>
+            </div>
             </div>
         </div>
     );

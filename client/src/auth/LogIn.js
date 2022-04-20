@@ -45,7 +45,7 @@ const LogIn = () => {
       );
 
       console.log(data);
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("usertoken", data.token);
       setLoading(false);
       alert("Login Successful");
       window.location.href = "/";

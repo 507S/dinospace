@@ -5,16 +5,38 @@ import img2 from "./images/bg2.jpg";
 import "../css/profile.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
+import jwt from "jsonwebtoken";
+import axios from "axios";
+
 
 
 
 
 const Profile = () => {
+<<<<<<< HEAD
   
+=======
+  const [initialState, setInitialState] = useState();
+>>>>>>> ce5e30f1188897e2883fae71d890f1d9d5127250
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
+  const usertoken = localStorage.getItem("usertoken");
+  console.log(usertoken);
+    const decodeduser = jwt.decode(usertoken);
+  console.log(decodeduser);
+
+    const userID = decodeduser.id;
+    const useremail = decodeduser.email;
+    const username = decodeduser.name;
+    console.log(userID);
+    useEffect(() => {
+      fetch(`/offer/user/${userID}`).then(res => {
+        return res.json();
+    }).then(jsonResponse => setInitialState(jsonResponse));
+}, []);
+      console.log(initialState);
   return (
     <div className="background">
       {/* <Navbar2 /> */}
@@ -38,7 +60,7 @@ const Profile = () => {
               <Card.Img class="rounded-circle" variant="top" src={img} />
             </div>
 
-            <Card.Title className="name">MD. Ahnaf Akib</Card.Title>
+            <Card.Title className="name">{initialState.name}</Card.Title>
 
             <Card.Body>
               <div className="mobile">
@@ -46,11 +68,11 @@ const Profile = () => {
                   <Row>
                     <Col className="mobile" md={5}>
                       {" "}
-                      <Card.Text>Mobile:</Card.Text>
+                      <Card.Text>Email</Card.Text>
                     </Col>
                     <Col className="mobile" md={5}>
                       {" "}
-                      <Card.Text>01849665655</Card.Text>
+                      <Card.Text>{initialState.email}</Card.Text>
                     </Col>
                   </Row>
                   <Row>
@@ -69,7 +91,7 @@ const Profile = () => {
               </div>
               <br />
               <Button className="info" variant="info">
-                Reservation History
+                <a href="/userhistory">  Reservation History</a> 
               </Button>
             </Card.Body>
           </Card>

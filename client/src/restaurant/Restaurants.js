@@ -26,7 +26,7 @@ const Restaurant = () => {
         } else {
             console.log("Geolocation is not supported by this browser.");
         }
-        console.log(initialState);
+        //console.log(initialState);
     }, []);
     return (
         <div className="restaurant">
@@ -46,7 +46,7 @@ const Restaurant = () => {
                                             Rating: {post.rating}
                                             <br></br>
                                             Location: {post.address.city}
-                                            {console.log(post.address.city)} 
+                                            
                                             
                                         </Card.Text>
                                         <Card.Text><Link to={`/restaurantProfile/${post._id}`}>View Details</Link></Card.Text>
@@ -71,7 +71,7 @@ const Restaurant = () => {
                                             Rating: {post.rating}
                                             <br></br>
                                             Location: {post.address.city}
-                                            {console.log(post.address.city)} 
+                                             
                                             
                                         </Card.Text>
                                         <Card.Text><Link to={`/restaurantProfile/${post._id}`}>View Details</Link></Card.Text>
