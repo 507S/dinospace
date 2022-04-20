@@ -3,6 +3,7 @@ const routers=express.Router();
 const Postmodel=require('../models/postmodels');
 const ReservationModel=require('../models/reservationModel');
 const OfferModel=require('../models/offermodels');
+const UserModels=require('../models/userModels');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -36,6 +37,15 @@ routers.patch('/sitreset/:postId',async(req,res)=>{
 routers.get('/:id',async(req,res)=>{
     try{
         const post=await OfferModel.find({restaurantID :req.params.id});
+        res.json(post);
+    }
+    catch(err){
+        res.json({message:err});
+    }
+})
+routers.get('/user/:id',async(req,res)=>{
+    try{
+        const post=await UserModels.findOne({_id :req.params.id});
         res.json(post);
     }
     catch(err){

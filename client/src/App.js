@@ -12,6 +12,8 @@ import Reserve from './reservation/Reserve';
 import RestaurantDash from './restaurant/restaurantDash'; 
 import Reservation from './restaurant/Reservation'; 
 import LoginRestaurents from './auth/restaurantLogin';
+import Userhistory from './auth/ReservationHistory';
+
 import SetTime from './restaurant/setTime'; 
 import SetOffer from './restaurant/setOffer';
 import RestaurantProfile from './restaurant/RestaurantProfile'; 
@@ -80,6 +82,9 @@ function App() {
         </Route>
         <Route path="/search">
           <Search />
+        </Route>
+        <Route path="/userhistory">
+          <Userhistory />
         </Route>
         
       </Switch>
