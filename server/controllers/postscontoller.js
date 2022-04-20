@@ -24,7 +24,7 @@ const getpost=async(req,res) =>{
     
     const posts=await Restaurentmodel.aggregate([
             {$sort: {rating: -1}},
-           {$limit: 2}]);
+           {$limit: 4}]);
     res.json(posts);
     
 } catch(err){

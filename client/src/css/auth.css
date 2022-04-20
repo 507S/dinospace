@@ -73,5 +73,15 @@ button#emnei.btn.btn-primary {
 }
 div.other,a{
     display: inline-block;
-    padding-left: 25px;
+    /* padding-left: 25px; */
+}
+a#other{
+    margin-left: 90%;
+}
+/* div#signInButton{
+    border-radius: 50%;
+} */
+
+span{
+    padding: 0%;
 }

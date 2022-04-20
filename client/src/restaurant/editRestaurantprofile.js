@@ -1,5 +1,6 @@
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import dinoLogo from "./images/dinoLogo.png";
+import dinoLogo from "../auth/images/dinoLogo.png";
+import bg from "../auth/images/bg9.jpg";
 import "../css/profile.css";
 import "../css/auth.css";
 //import userIcon from "./images/dino.jpg";
@@ -162,8 +163,9 @@ const EditRestaurantProfile = () => {
   // );
 
   return (
-    <div>
+    <div className="background">
       {/* <Navbar2 /> */}
+      <img className="bg" src={bg} />
       <a href="/" className="navlogo">
         <div data-aos="fade-right" className="fade">
           <img className="dinologo" src={dinoLogo} />
@@ -171,9 +173,9 @@ const EditRestaurantProfile = () => {
       </a>
 
       <div className="links2">
-        <a href="/SignUp">Sign Up</a>
-        <a href="/LogIn">Sign In</a>
-        <a href="/Profile">Profile</a>
+      <a href="/dash">Reservation History</a>
+        <a href="/setRestaurantTime">Set Time</a>
+        <a href="/setRestaurantOffer">Set Offer</a>
       </div>
 
       <div className="profile">
@@ -181,27 +183,29 @@ const EditRestaurantProfile = () => {
           <div className="justify-content-md-center">
             <Form>
               <div data-aos="fade-up" className="fade">
-                <div className="text-center">
-                  
-                </div>
+                {/* <div className="text-center">
+                  <img className="user" src={userIcon} />
+                </div> */}
                 <Container>
+                  <div className="text-center">
+                    <h1 id="edit">Update Restaurant Info</h1>
+                  </div>
                   <Row>
                     <Col>
-                      <Form.Group className="mb-3" controlId="Rname">
-                        <Form.Label>Change Restaurant Name</Form.Label>
+                      <Form.Group className="mb-3">
+                        <Form.Label>Name</Form.Label>
                         <Form.Control
                           type="text"
                           onChange={(e) => setRestaurantName(e.target.value)}
                           placeholder="Enter Name"
-                          id="Rname"
+                          
                         />
                       </Form.Group>
                     </Col>
-                  </Row>
-                  <Row>
+                  
                     <Col>
                       <Form.Group className="mb-3" >
-                        <Form.Label>Change Location</Form.Label>
+                        <Form.Label>Location</Form.Label>
                         <Form.Control
                           type="text"
                           onChange={(e) =>
@@ -211,11 +215,24 @@ const EditRestaurantProfile = () => {
                         />
                       </Form.Group>
                     </Col>
+                    {/* <Col>
+                      <Form.Group className="mb-3" >
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control
+                          type="email"
+                          onChange={(e) => {
+                            setRestaurantMail(e.target.value);
+                          }}
+                          placeholder="Enter email"
+                          id="email"
+                        />
+                      </Form.Group>
+                    </Col> */}
                   </Row>
                   <Row>
                     <Col>
                       <Form.Group className="mb-3" >
-                        <Form.Label>Cuisine (comma seperated)</Form.Label>
+                        <Form.Label>Cuisine</Form.Label>
                         <Form.Control
                           type="text"
                           onChange={(e) => setCuisine(e.target.value)}
@@ -259,7 +276,29 @@ const EditRestaurantProfile = () => {
                   <Row>
                     <Col>
                       <Form.Group className="mb-3">
-                        <Form.Label>Current Password</Form.Label>
+                        <Form.Label>Opening</Form.Label>
+                        <Form.Control
+                          type="time"
+                          onChange={(e) => setOpenTime(e.target.value)}
+                          placeholder="Enter Opening Time"
+                        />
+                      </Form.Group>
+                    </Col>
+                    <Col>
+                      <Form.Group className="mb-3" >
+                        <Form.Label>Closing</Form.Label>
+                        <Form.Control
+                          type="time"
+                          onChange={(e) => setClosingTime(e.target.value)}
+                          placeholder="Enter Closing Time"
+                        />
+                      </Form.Group>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Form.Group className="mb-3">
+                        <Form.Label>Password</Form.Label>
                         <Form.Control
                           type="password"
                           id="pass1"
@@ -273,7 +312,7 @@ const EditRestaurantProfile = () => {
                         className="mb-3"
               
                       >
-                        <Form.Label>New Password </Form.Label>
+                        <Form.Label>Password </Form.Label>
                         <Form.Control
                           type="password"
                           id="pass2"

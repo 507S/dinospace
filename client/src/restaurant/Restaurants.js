@@ -26,6 +26,7 @@ const Restaurant = () => {
         } else {
             console.log("Geolocation is not supported by this browser.");
         }
+        console.log(initialState);
     }, []);
     return (
         <div className="restaurant">
@@ -43,10 +44,37 @@ const Restaurant = () => {
                                         <Card.Title>{post.name}</Card.Title>
                                         <Card.Text>
                                             Rating: {post.rating}
+                                            <br></br>
                                             Location: {post.address.city}
                                             {console.log(post.address.city)} 
-                                            <Link to={`/restaurantProfile/${post._id}`}>View Details</Link>
+                                            
                                         </Card.Text>
+                                        <Card.Text><Link to={`/restaurantProfile/${post._id}`}>View Details</Link></Card.Text>
+                                        {/* <Button onClick={()=> {this.props.history.replace('../restaurant/navbar.js')}} variant="primary">View Details</Button> */}
+                                        
+
+                                    </Card.Body>
+                                </Card>
+                                )}
+                            </CardGroup>
+                        
+                        </Carousel.Item>
+                        <Carousel.Item>
+                        
+                            <CardGroup >
+                            {initialState.map(post =>
+                                <Card key={post._id}>
+
+                                    <Card.Body>
+                                        <Card.Title>{post.name}</Card.Title>
+                                        <Card.Text>
+                                            Rating: {post.rating}
+                                            <br></br>
+                                            Location: {post.address.city}
+                                            {console.log(post.address.city)} 
+                                            
+                                        </Card.Text>
+                                        <Card.Text><Link to={`/restaurantProfile/${post._id}`}>View Details</Link></Card.Text>
                                         {/* <Button onClick={()=> {this.props.history.replace('../restaurant/navbar.js')}} variant="primary">View Details</Button> */}
                                         
 

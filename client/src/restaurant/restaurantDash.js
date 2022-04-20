@@ -144,8 +144,10 @@ const RestaurantDash = () => {
       </a>
 
       <div className="links2">
-        <a href="/SignUp">Sign Up</a>
-        <a href="/LogIn">Sign In</a>
+        <a href="/setRestaurantTime">Set Time</a>
+        <a href="/setRestaurantOffer">Set Offer</a>
+        <a href="/editResProfile">Edit Profile</a>
+
         {/* <a href="/Profile">Profile</a> */}
         <a href="/"onClick={handleLogout}>logout</a>
       </div>
@@ -154,7 +156,7 @@ const RestaurantDash = () => {
         {/* <div data-aos="zoom-in-up" className="fade"> */}
         <div className="justify-content-md-center">
           <div className="table">
-            <h2 className="text-center">Reservation History</h2>
+            <h2 className="gg">Reservation History</h2>
             <Table striped bordered hover variant="dark">
               <thead>
                 <tr>
