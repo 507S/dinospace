@@ -11,6 +11,8 @@ const Profile = () => {
     useEffect(() => {
         Aos.init({ duration: 1500 });
     }, []);
+    const token = localStorage.getItem("token2");
+    console.log(token);
     return (
         <div className="background">
             {/* <Navbar2 /> */}
@@ -38,7 +40,9 @@ const Profile = () => {
 
                         </div>
 
-                        <Card.Title className="name">MD. Ahnaf Akib</Card.Title>
+                        <Card.Title className="name">{
+                            localStorage.getItem('token2')
+                        }</Card.Title>
 
                         <Card.Body>
 

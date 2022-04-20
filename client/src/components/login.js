@@ -8,6 +8,7 @@ function Login()
 
     const onSuccess = (res) => {
         console.log("Login Successful! Current User: ", res.profileObj);
+        localStorage.setItem('token2', res.profileObj);
         alert('Login Successful');
         window.location.href = '/';
     }
