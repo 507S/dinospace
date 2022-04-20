@@ -24,7 +24,7 @@ const UserSignIn = () => {
         <a href="/UserSignUp">Sign Up</a>
         <a href="/UserSignIn">Sign In</a>
         <a href="/Profile">Profile</a>
-        <a href="/Profile">Logout</a>
+        {/* <a href="/Profile">Logout</a> */}
       </div>
 
       <div className="iconElements">

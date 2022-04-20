@@ -14,11 +14,7 @@ import axios from "axios";
 
 
 const Profile = () => {
-<<<<<<< HEAD
-  
-=======
   const [initialState, setInitialState] = useState();
->>>>>>> ce5e30f1188897e2883fae71d890f1d9d5127250
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);

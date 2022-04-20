@@ -13,8 +13,8 @@ const navbar = () => {
             <div className="links">
                 <a href="/UserSignUp">Sign Up</a>
                 <a href="/UserSignIn">Sign In</a>
-                <a href="/Profile">Profile</a>
-                <a href="/"onClick={handleLogout}>logout</a>
+                <a href="/">Contact Us</a>
+                {/* <a href="/"onClick={handleLogout}>logout</a> */}
             </div>
         </div>
     );
