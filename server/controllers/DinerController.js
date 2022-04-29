@@ -5,15 +5,15 @@ const generateToken = require("../Utility/JWT-imp");
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password, cpassword, mobile } = req.body;
 
-    const usernameExists = await User.findOne({ name });
+   // const usernameExists = await User.findOne({ name });
     const emailExists = await User.findOne({email});
   
     if (usernameExists) {
       res.status(404);
-      throw new Error("Username has already been taken");
+     // throw new Error("Username has already been taken");
     }else if(emailExists){
         res.status(404);
-      throw new Error("An account already exists under this email");
+    //  throw new Error("An account already exists under this email");
     }
   
     const user = await User.create({

@@ -11,6 +11,7 @@ import "../css/table.css";
 const RestaurantDash = () => {
   const [initialState, setInitialState] = useState([]);
   const [initialState2, setInitialState2] = useState([]);
+  const [initialState3, setInitialState3] = useState([]);
   const [openTime, setOpenTime] = useState("");
   const [closeTime, setCloseTime] = useState("");
   const [offeringName, setOfferName] = useState("");
@@ -52,14 +53,25 @@ const RestaurantDash = () => {
       .then((jsonResponse) => setInitialState2(jsonResponse));
   };
 
-  const handleSubmit = async (reserveID, reserveStatus) => {
+  const handleSubmit = async (reserveID, reserveStatus,option2,person) => {
     console.log(reserveStatus);
+    console.log(option2);
     try {
       const response = await axios.patch(`reserve/${reserveID}`, {
         reserveStatus: reserveStatus,
       });
+      if(reserveStatus=="REJECT"){
+          const response3 = await axios.get(`offer/singleoffer/${option2}`);
+          const prevSitCount2 = response3.data[0].remainingSits;
+          console.log(prevSitCount2);
+          const newsits=prevSitCount2+person; 
+          const response2 = await axios.patch(`offer/sitrestuponrejection/${option2}`, {
+          newsits: newsits,
+        });
+      console.log(response2);
+      }
       console.log(response);
-      window.location.reload(true);
+     // window.location.reload(true);
     } catch (error) {
       console.log(error);
     }
@@ -188,7 +200,7 @@ const RestaurantDash = () => {
                         value="REJECT"
                         onClick={(e) => {
                           //setInitialStatus(e.target.value);
-                          handleSubmit(post._id, "REJECT");
+                          handleSubmit(post._id, "REJECT", post.option2, post.person);
                         }}
                       >
                         Reject

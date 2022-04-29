@@ -5,7 +5,7 @@ import UserSignIn from './auth/UserSignIn';
 import UserSignUp from './auth/UserSignUp';
 import Profile from './auth/Profile';
 import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import SignUp from './auth/SignUp';
+import SignUp from './auth/SignUpcopy';
 import Restaurant from './restaurant/Restaurant';
 import RegisterRestaurents from './auth/SignupRestaurant.js';
 import Reserve from './reservation/Reserve';
@@ -53,9 +53,9 @@ function App() {
         <Route path="/SignUpAsRestaurant">
           <RegisterRestaurents />
         </Route>
-        {/* <Route path="/reservation/:id">
+        <Route path="/reservation/:id">
           <Reserve />
-        </Route> */}
+        </Route>
         <Route path="/dash">
           <RestaurantDash />
         </Route>
@@ -72,14 +72,14 @@ function App() {
           <SetOffer />
         </Route>
         <Route path="/menuUpload">
-          <UploadMenu />
+          <UploadMenu /> 
         </Route>
         <Route path="/editResProfile">
           <EditRestaurantProfile />
         </Route>
-        <Route path="/reservation/:id">
+        {/* <Route path="/reservation/:id">
           <Reservation />
-        </Route>
+        </Route> */}
         <Route path="/search">
           <Search />
         </Route>

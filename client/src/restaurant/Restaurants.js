@@ -59,7 +59,7 @@ const Restaurant = () => {
                             </CardGroup>
                         
                         </Carousel.Item>
-                        <Carousel.Item>
+                        {/* <Carousel.Item>
                         
                             <CardGroup >
                             {initialState.map(post =>
@@ -77,14 +77,14 @@ const Restaurant = () => {
                                         <Card.Text><Link to={`/restaurantProfile/${post._id}`}>View Details</Link></Card.Text>
                                         {/* <Button onClick={()=> {this.props.history.replace('../restaurant/navbar.js')}} variant="primary">View Details</Button> */}
                                         
-
+{/*                                    </Card.Body>}
                                     </Card.Body>
                                 </Card>
                                 )}
                             </CardGroup>
                         
-                        </Carousel.Item>
-                    </Carousel>
+                        </Carousel.Item>*/}
+                    </Carousel> 
                 </div>
             
                     

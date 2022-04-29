@@ -65,6 +65,7 @@ const SetOffer = () => {
       console.log(response);
       if ((response.status = 200)) {
         alert("Offering Added Successfully");
+        window.location.reload(true);
       }
     } catch (error) {
       console.log(error);
@@ -76,6 +77,7 @@ const SetOffer = () => {
       const response = await axios.patch(`offer/sitreset/${optionID}`, {
         prevSitCount: prevSitCount,
       });
+      const response2 = await axios.delete(`offer/reservedel/${optionID}`);
       console.log(response);
       window.location.reload(true);
     } catch (error) {

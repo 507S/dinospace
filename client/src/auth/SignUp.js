@@ -46,11 +46,15 @@ const SignUp = () => {
             password,
           },
           config
-        );
+        )
+        .then(res => {
+          console.log(res);
+        });
 
         console.log(data);
         localStorage.setItem("userInfo", JSON.stringify(data));
         setLoading(false);
+        window.location.href = "/";
       } catch (error) {
         setError(error.response.data.message);
       }

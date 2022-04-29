@@ -149,7 +149,7 @@ const RegisterRestaurents = () => {
       <div className="links2">
         <a href="/SignUp">Sign Up</a>
         <a href="/LogIn">Sign In</a>
-        <a href="/Profile">Profile</a>
+       
       </div>
 
       <div className="profile">

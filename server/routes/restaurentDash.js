@@ -56,6 +56,7 @@ routers.get('/:postId',async(req,res)=>{
 routers.post('/',async(req,res)=>{
     //console.log(req.body);
     const post=new ReservationModel({
+        userID:req.body.userID,
         restaurantID:req.body.restaurantID,
         option2:req.body.option2,
         optionname:req.body.optionname,

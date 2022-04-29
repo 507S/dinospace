@@ -1,6 +1,9 @@
 const mongoose=require('mongoose');
 
 const ReserveSchema = mongoose.Schema({
+    userID:{
+        type:String
+    },
     restaurantID: {
         type: String,
         required: true

@@ -11,7 +11,7 @@ import axios from "axios";
 
 
 const Profile = () => {
-  const [initialState, setInitialState] = useState();
+  const [initialState, setInitialState] = useState([]);//just making an empty array solved the bug of not fetching data
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -21,17 +21,23 @@ const Profile = () => {
   console.log(decodeduser);
 
     const userID = decodeduser.id;
-    const useremail = decodeduser.email;
-    const username = decodeduser.name;
-    console.log(userID);
     useEffect(() => {
-      fetch(`/offer/user/${userID}`).then(res => {
-        return res.json();
-    }).then(jsonResponse => setInitialState(jsonResponse));
-}, []);
+      axios
+        .get(`/offer/user/${userID}`)
+        .then((res) => {
+          setInitialState(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, []);
       console.log(initialState);
+      const handleLogoutUser = () => {
+        localStorage.clear();
+        //window.location.href = "/";
+      };
   return (
-    <div className="background">
+    <div className="background"> 
       {/* <Navbar2 /> */}
       <img className="bg" src={img2} />
       <a href="/" className="navlogo">
@@ -41,9 +47,7 @@ const Profile = () => {
       </a>
 
       <div className="links2">
-        <a href="/UserSignUp">Sign Up</a>
-        <a href="/UserSignIn">Sign In</a>
-        <a href="/Profile">Profile</a>
+        <a href="/" onClick={ handleLogoutUser }>Logout </a>
       </div>
 
       <div className="profile">
