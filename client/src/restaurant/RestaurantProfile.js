@@ -162,7 +162,7 @@ const RestaurantProfile = () => {
           <p id="rname">ClosingTime: {initialState.closing_time}</p>
 
           <p id="rname">Menu: <a href="#"> Click here to view</a></p>
-          <Link to={`/Reservation/${initialState._id}`}><Button id="res">Reserve</Button>
+          <Link to={`/Reserve/${initialState._id}`}><Button id="res">Reserve</Button>
           </Link>
         </div>
 
