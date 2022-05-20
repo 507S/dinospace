@@ -54,6 +54,6 @@ router
 router.route('/reservation').post(protect, reserveUser)
 router.route('/logout').get(logoutUser)
 
-router.route('/profile').get(protect, reserveUser)
+router.route('/profile').post(protect, reserveUser)
 
 module.exports = router;

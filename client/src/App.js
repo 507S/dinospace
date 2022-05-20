@@ -53,7 +53,7 @@ function App() {
         <Route path="/SignUpAsRestaurant">
           <RegisterRestaurents />
         </Route>
-        <Route path="/reservation/:id">
+        <Route path="/reserve/:id">
           <Reserve />
         </Route>
         <Route path="/dash">

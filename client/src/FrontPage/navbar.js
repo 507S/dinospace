@@ -15,9 +15,10 @@ const navbar = () => {
             <a href="/" className='home-link'><img className="dinologo" src={dinoLogo} /></a>
             <h1>DinoSpace</h1>
             <div className="links">
-            <a href="/UserSignUp">Sign Up</a>
-                {localStorage.getItem("usertoken") ? <a href="/" onClick={handleLogoutUser}>Sign Out</a> : <a href="/userSignin">Sign In</a>}
-                {localStorage.getItem("usertoken") ? <a href="/Profile" >Profile</a> : <a href="/#">Guest</a>}
+                <a href="/UserSignUp">Sign Up</a>
+                <a href="/UserSignIn">Sign In</a>
+                <a href="/">Contact Us</a>
+                {/* <a href="/"onClick={handleLogout}>logout</a> */}
             </div>
         </div>
     );

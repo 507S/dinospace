@@ -158,6 +158,9 @@ const RestaurantProfile = () => {
           <p id="rname">Cuisine: {initialState.cuisine}</p>
           <p id="rname">Location: {initialState.location}</p>
           <p id="rname">Rating: {initialState.rating}</p>
+          <p id="rname">OpeninigTime: {initialState.opening_time}</p>
+          <p id="rname">ClosingTime: {initialState.closing_time}</p>
+
           <p id="rname">Menu: <a href="#"> Click here to view</a></p>
           <Link to={`/Reservation/${initialState._id}`}><Button id="res">Reserve</Button>
           </Link>

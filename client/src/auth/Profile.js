@@ -10,6 +10,9 @@ import jwt from "jsonwebtoken";
 import axios from "axios";
 
 
+
+
+
 const Profile = () => {
   const [initialState, setInitialState] = useState([]);//just making an empty array solved the bug of not fetching data
   useEffect(() => {
